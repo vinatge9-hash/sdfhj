@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niyantri Dog Care - Cart</title>
+  <meta name="description" content="Your cart for Niyantri Dog Care. Review items and checkout with a mock PayPal payment." />
+  <!-- fonts to load: 'Playfair Display', serif; 'Inter', sans-serif -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="opacity-0 transition-opacity duration-1000 ease-in-out">
+  <header class="bg-white/70 backdrop-blur-lg fixed w-full z-50 border-b border-gray-200">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-8 h-8 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-label="Paw icon">
+          <path d="M7.5 4a2.5 2.5 0 00-2.5 2.5c0 1.104.896 2 2 2 .33 0 .64-.08.92-.22A4.5 4.5 0 0114 6.5c1.933 0 3.5 1.567 3.5 3.5S15.933 13.5 14 13.5c-1.103 0-2-.897-2-2 0-.14.012-.28.034-.416A2.5 2.5 0 007.5 4z"/>
+        </svg>
+        <span class="text-xl font-semibold text-slate-800 tracking-wide">Niyantri Dog Care</span>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="./index.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Home</a>
+        <a href="./menu.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Menu</a>
+        <a href="./cart.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Cart</a>
+        <a href="./about.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">About</a>
+        <a href="./contact.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg bg-white/70 hover:bg-white/90 transition-all duration-300" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Open menu">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="./index.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Home</a>
+      <a href="./menu.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Menu</a>
+      <a href="./cart.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Cart</a>
+      <a href="./about.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">About</a>
+      <a href="./contact.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section class="min-h-screen w-full bg-cover bg-center" style="background-image: url('https://pixabay.com/get/g7f455dcd43f16cf21037218b3868f283b7a3570480255a219ec201f630d97a50a25f79f0fd4d6e419ac230a2cd437d846913208269a1b6d870ce6232fe57f13e_640.jpg');">
+      <div class="h-full w-full flex items-center justify-center text-center p-6" style="min-height: 60vh;">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-semibold mb-4" style="font-family: 'Playfair Display', serif;">Your Cart</h1>
+          <p class="text-slate-700 max-w-2xl mx-auto">Review your selected services and proceed to checkout with a mock PayPal payment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 px-4" aria-label="cart-items">
+      <div class="container mx-auto">
+        <div id="cart-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div class="mt-6 flex justify-end">
+          <button onclick="checkoutMock()" class="px-6 py-3 rounded bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold shadow hover:shadow-lg transition-all duration-300">Pay with PayPal (mock)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-100 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Niyantri Dog Care. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Mock PayPal modal -->
+  <div id="paypal-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/3">
+      <h3 class="text-xl font-semibold mb-4">Mock PayPal Checkout</h3>
+      <p class="mb-4 text-slate-700">This is a mock PayPal flow for demonstration purposes.</p>
+      <div class="flex justify-end gap-3">
+        <button class="px-4 py-2 rounded border" onclick="closePaypal()">Cancel</button>
+        <button class="px-4 py-2 rounded bg-gradient-to-r from-amber-500 to-orange-600 text-white" onclick="confirmPayment()">Pay Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Page load fade-in
+    window.addEventListener('load', () => document.body.classList.remove('opacity-0'));
+
+    // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+    // Load cart items from localStorage
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const cart = JSON.parse(localStorage.getItem('nyan_cart') || '[]');
+      container.innerHTML = cart.length === 0
+        ? '<p class="text-slate-700">Your cart is empty. Browse the Menu and add items.</p>'
+        : cart.map((it, idx) => `
+            <div class="bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="inline-block w-8 h-8 bg-amber-200 rounded-full" aria-label="item icon"></span>
+                <div>
+                  <strong>${it.name}</strong>
+                  <div class="text-xs text-slate-600">Item ${idx + 1}</div>
+                </div>
+              </div>
+              <span class="font-semibold">$${it.price}</span>
+            </div>
+          `).join('');
+    }
+
+    function closePaypal() {
+      document.getElementById('paypal-modal').classList.add('hidden');
+    }
+
+    function confirmPayment() {
+      // mock API call
+      document.getElementById('paypal-modal').classList.add('hidden');
+      // simulate delay
+      setTimeout(() => {
+        localStorage.removeItem('nyan_cart');
+        renderCart();
+        alert('Payment successful! Thank you.');
+      }, 600);
+    }
+
+    function checkoutMock() {
+      const cart = JSON.parse(localStorage.getItem('nyan_cart') || '[]');
+      if (cart.length === 0) { alert('Your cart is empty. Add items first.'); return; }
+      // open modal
+      document.getElementById('paypal-modal').classList.remove('hidden');
+    }
+
+    // initial render
+    renderCart();
+
+    // Scroll animation (optional on this page)
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('opacity-100'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => { el.classList.add('transition-opacity', 'duration-1000', 'ease-in-out'); observer.observe(el); });
+  </script>
+</body>
+</html>
