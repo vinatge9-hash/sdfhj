@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niyantri Dog Care - Contact</title>
+  <meta name="description" content="Get in touch with Niyantri Dog Care in Hyderabad. Address, phone, email, and a convenient contact form." />
+  <!-- fonts to load: 'Playfair Display', serif; 'Inter', sans-serif -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="opacity-0 transition-opacity duration-1000 ease-in-out">
+  <header class="bg-white/70 backdrop-blur-lg fixed w-full z-50 border-b border-gray-200">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-8 h-8 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-label="Paw icon">
+          <path d="M7.5 4a2.5 2.5 0 00-2.5 2.5c0 1.104.896 2 2 2 .33 0 .64-.08.92-.22A4.5 4.5 0 0114 6.5c1.933 0 3.5 1.567 3.5 3.5S15.933 13.5 14 13.5c-1.103 0-2-.897-2-2 0-.14.012-.28.034-.416A2.5 2.5 0 007.5 4z"/>
+        </svg>
+        <span class="text-xl font-semibold text-slate-800 tracking-wide">Niyantri Dog Care</span>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="./index.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Home</a>
+        <a href="./menu.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Menu</a>
+        <a href="./cart.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Cart</a>
+        <a href="./about.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">About</a>
+        <a href="./contact.html" class="text-slate-700 hover:text-slate-900 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg bg-white/70 hover:bg-white/90 transition-all duration-300" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Open menu">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="./index.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Home</a>
+      <a href="./menu.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Menu</a>
+      <a href="./cart.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Cart</a>
+      <a href="./about.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">About</a>
+      <a href="./contact.html" class="block py-2 text-slate-700 hover:text-slate-900 transition-all duration-300">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section class="min-h-screen w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1669429705965-e44e667f3616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8SHlkZXJhYmFkJTIwY2l0eXNjYXBlJTIwYXQlMjBkdXNrfGVufDB8MHx8fDE3NTY4MTczMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080');">
+      <div class="h-full w-full flex items-center justify-center text-center p-6" style="min-height: 60vh;">
+        <div class="max-w-2xl" style="font-family: 'Playfair Display', serif;">
+          <h1 class="text-3xl md:text-5xl font-semibold mb-4">Contact Us</h1>
+          <p class="text-slate-700">We’d love to hear from you. Reach out via the form or visit our Hyderabad location.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 px-4" aria-label="contact-info">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <form class="bg-white rounded-lg shadow-md p-6" onsubmit="return false;">
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Name</label>
+            <input type="text" class="w-full border rounded p-2" placeholder="Your name" required />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" class="w-full border rounded p-2" placeholder="you@example.com" required />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Message</label>
+            <textarea class="w-full border rounded p-2" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <button class="px-4 py-2 rounded bg-gradient-to-r from-amber-500 to-orange-600 text-white">Send Message</button>
+        </form>
+        <div class="animate-on-scroll opacity-0">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-2">Hyderabad, India</h3>
+            <p class="text-sm text-slate-600">Address: Placeholder Street, Secunderabad, Hyderabad</p>
+            <p class="text-sm text-slate-600 mt-2">Phone: +91 98765 43210</p>
+            <p class="text-sm text-slate-600 mt-2">Email: contact@niyantri-dogcare.in</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-100 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Niyantri Dog Care. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('load', () => document.body.classList.remove('opacity-0'));
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('opacity-100'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => { el.classList.add('transition-opacity', 'duration-1000', 'ease-in-out'); observer.observe(el); });
+  </script>
+</body>
+</html>
